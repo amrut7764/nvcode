@@ -15,7 +15,7 @@ local layer = {}
 
 --- Returns plugins required for this layer
 function layer.register_plugins()
-  plug.add_plugin("christianchiarulli/onedark.vim")
+  plug.add_plugin("gruvbox-community/gruvbox")
   plug.add_plugin("vim-airline/vim-airline")
 end
 
@@ -28,7 +28,7 @@ function layer.init_config()
           airline to initialize with our colorscheme colors
   --]]
   autocmd.bind_vim_enter(function()
-    api.nvim_command("colorscheme onedark")
+    api.nvim_command("colorscheme gruvbox")
     vim.cmd("AirlineRefresh")
   end)
   
@@ -40,10 +40,10 @@ function layer.init_config()
 
   vo.showtabline = 2                        -- Always show tabs
 
-  -- onedark global variables
-  vg.onedark_hide_endofbuffer = true        -- Cleaner look by hiding the `~` buffer extra lines
-  vg.onedark_terminal_italics = true        -- Enable italics
-  vg.onedark_termcolors = 256               -- Enable better color support
+  -- gruvbox global variables
+  vg.gruvbox_hide_endofbuffer = true        -- Cleaner look by hiding the `~` buffer extra lines
+  vg.gruvbox_terminal_italics = true        -- Enable italics
+  vg.gruvbox_termcolors = 256               -- Enable better color support
   
   -- airline global variables
   vg.webdevicons_enable_airline_tabline = 1 -- Enable special characters in tabline
@@ -51,7 +51,7 @@ function layer.init_config()
   vg.airline_left_sep = ""                  -- Clear out airline separators
   vg.airline_right_sep = ""                 -- Clear out airline separators
   vg.airline_right_alt_sep = ""             -- Clear out airline separators
-  vg.airline_theme = "onedark"              -- Switch to your current theme  
+  vg.airline_theme = "gruvbox"              -- Switch to your current theme  
 
   -- Set vim-airline tabline properties in a dry manner
   local function set_tabline_var(key, value)
